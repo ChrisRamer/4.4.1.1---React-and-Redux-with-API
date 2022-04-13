@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getWhiteCards } from '../actions/index';
+import cardImg from './../img/white_card.png';
 
 class WhiteCards extends React.Component {
 	constructor(props) {
@@ -8,28 +9,38 @@ class WhiteCards extends React.Component {
 	}
 
 	componentDidMount() {
-		const { dispatch } = this.props;
-		dispatch(getWhiteCards());
+		//const { dispatch } = this.props;
+		//dispatch(getWhiteCards());
 	}
 
 	render() {
+		/*
 		const { error, isLoading, cards } = this.props;
 		if (error) {
 			return <React.Fragment>Error: {error.message}</React.Fragment>;
 		} else if (isLoading) {
 			return <React.Fragment>Loading...</React.Fragment>
-		} else {
-			return (
-				<React.Fragment>
-					<h1>White Cards Success!</h1>
+		*/
+		const cards = [
+			"White card #1",
+			"White card #2",
+			"White card #3",
+			"White card #4",
+			"White card #5",
+		]
+		return (
+			<React.Fragment>
+				<div className="cards-grid">
 					{cards.map((card, index) =>
-						<li key={index}>
-							<p>{card.text}</p>
-						</li>
+						<div key={index} className="white-card" style={{ backgroundImage: `url(${cardImg})` }}>
+							<div id="white-card-text">
+								{card}
+							</div>
+						</div>
 					)}
-				</React.Fragment>
-			)
-		}
+				</div>
+			</React.Fragment>
+		)
 	}
 }
 

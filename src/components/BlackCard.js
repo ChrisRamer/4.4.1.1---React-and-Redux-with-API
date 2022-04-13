@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getBlackCard }  from '../actions/index';
+import cardImg from './../img/black_card.png';
 
 class BlackCard extends React.Component {
 	constructor(props) {
@@ -8,24 +9,30 @@ class BlackCard extends React.Component {
 	}
 
 	componentDidMount() {
-		const { dispatch } = this.props;
-		dispatch(getBlackCard());
+		//const { dispatch } = this.props;
+		//dispatch(getBlackCard());
 	}
 
 	render() {
+		/*
 		const { error, isLoading, card } = this.props;
 		if (error) {
 			return <React.Fragment>Error: {error.message}</React.Fragment>;
 		} else if (isLoading) {
 			return <React.Fragment>Loading...</React.Fragment>
-		} else {
-			return (
-				<React.Fragment>
-					<h1>Black Card Success!</h1>
-					<p>{card.text}</p>
-				</React.Fragment>
-			)
-		}
+		*/
+		const card = "This is  the black card. It's a very shiny black card!";
+		return (
+			<React.Fragment>
+				<div className="cards-grid">
+					<div className="black-card" style={{ backgroundImage: `url(${cardImg})` }}>
+						<div id="black-card-text">
+							{card}
+						</div>
+					</div>
+				</div>
+			</React.Fragment>
+		)
 	}
 }
 
