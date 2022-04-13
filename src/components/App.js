@@ -1,10 +1,12 @@
 import React from 'react';
-import Board from './Board';
+import BlackCard from './BlackCard';
+import WhiteCards from './WhiteCards';
 
 function App() {
 	return (
 		<React.Fragment>
-			<Board />
+			<BlackCard />
+			<WhiteCards />
 		</React.Fragment>
 	);
 }

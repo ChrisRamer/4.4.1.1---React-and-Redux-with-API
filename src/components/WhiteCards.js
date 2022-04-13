@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getBlackCard, getWhiteCards }  from '../actions/index';
+import { getWhiteCards } from '../actions/index';
 
-class Board extends React.Component {
+class WhiteCards extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 
 	componentDidMount() {
 		const { dispatch } = this.props;
-		dispatch(getBlackCard());
+		dispatch(getWhiteCards());
 	}
 
 	render() {
@@ -21,7 +21,7 @@ class Board extends React.Component {
 		} else {
 			return (
 				<React.Fragment>
-					<h1>Success!</h1>
+					<h1>White Cards Success!</h1>
 					{cards.map((card, index) =>
 						<li key={index}>
 							<p>{card.text}</p>
@@ -41,4 +41,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps)(Board);
+export default connect(mapStateToProps)(WhiteCards);

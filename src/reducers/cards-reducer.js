@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
 		case c.GET_BLACK_CARD_SUCCESS:
 			return Object.assign({}, state, {
 				isLoading: false,
-				cards: action.cards
+				card: action.card
 			});
 		case c.GET_BLACK_CARD_FAILURE:
 			return Object.assign({}, state, {

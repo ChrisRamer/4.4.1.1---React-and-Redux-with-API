@@ -13,9 +13,9 @@ export const requestBlackCard = () => ({
 	type: c.REQUEST_BLACK_CARD
 });
 
-export const getBlackCardSuccess = (cards) => ({
+export const getBlackCardSuccess = (card) => ({
 	type: c.GET_BLACK_CARD_SUCCESS,
-	cards
+	card
 });
 
 export const getBlackCardFailure = (error) => ({
@@ -43,7 +43,7 @@ export const getBlackCard = () => {
 		try {
 			const response = await fetch(`${url}/black`, options);
 			const jsonifiedResponse = await response.json();
-			dispatch(getBlackCardSuccess(new Array(jsonifiedResponse)));
+			dispatch(getBlackCardSuccess(jsonifiedResponse));
 		} catch (error) {
 			dispatch(getBlackCardFailure(error));
 		}
