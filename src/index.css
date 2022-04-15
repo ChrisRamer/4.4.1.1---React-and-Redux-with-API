@@ -7,6 +7,10 @@ body {
 		sans-serif;
 }
 
+a {
+	color: rgb(153, 109, 255)
+}
+
 .black-card {
 	align-content: center;
 	width: 200px;
