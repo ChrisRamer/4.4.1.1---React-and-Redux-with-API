@@ -9,30 +9,29 @@ class BlackCard extends React.Component {
 	}
 
 	componentDidMount() {
-		//const { dispatch } = this.props;
-		//dispatch(getBlackCard());
+		const { dispatch } = this.props;
+		dispatch(getBlackCard());
 	}
 
 	render() {
-		/*
 		const { error, isLoading, card } = this.props;
 		if (error) {
 			return <React.Fragment>Error: {error.message}</React.Fragment>;
 		} else if (isLoading) {
 			return <React.Fragment>Loading...</React.Fragment>
-		*/
-		const card = "This is  the black card. It's a very shiny black card!";
-		return (
-			<React.Fragment>
-				<div className="cards-grid">
-					<div className="black-card" style={{ backgroundImage: `url(${cardImg})` }}>
-						<div id="black-card-text">
-							{card}
+		} else {
+				return (
+					<React.Fragment>
+						<div className="cards-grid">
+							<div className="black-card" style={{ backgroundImage: `url(${cardImg})` }}>
+								<div id="black-card-text">
+									{card.text}
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</React.Fragment>
-		)
+					</React.Fragment>
+				)
+		}
 	}
 }
 

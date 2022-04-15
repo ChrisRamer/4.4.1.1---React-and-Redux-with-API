@@ -9,38 +9,31 @@ class WhiteCards extends React.Component {
 	}
 
 	componentDidMount() {
-		//const { dispatch } = this.props;
-		//dispatch(getWhiteCards());
+		const { dispatch } = this.props;
+		dispatch(getWhiteCards(5));
 	}
 
 	render() {
-		/*
 		const { error, isLoading, cards } = this.props;
 		if (error) {
 			return <React.Fragment>Error: {error.message}</React.Fragment>;
 		} else if (isLoading) {
 			return <React.Fragment>Loading...</React.Fragment>
-		*/
-		const cards = [
-			"White card #1",
-			"White card #2",
-			"White card #3",
-			"White card #4",
-			"White card #5",
-		]
-		return (
-			<React.Fragment>
-				<div className="cards-grid">
-					{cards.map((card, index) =>
-						<div key={index} className="white-card" style={{ backgroundImage: `url(${cardImg})` }}>
-							<div id="white-card-text">
-								{card}
+	} else {
+			return (
+				<React.Fragment>
+					<div className="cards-grid">
+						{cards.map((card, index) =>
+							<div key={index} className="white-card" style={{ backgroundImage: `url(${cardImg})` }}>
+								<div id="white-card-text">
+									{card.text}
+								</div>
 							</div>
-						</div>
-					)}
-				</div>
-			</React.Fragment>
-		)
+						)}
+					</div>
+				</React.Fragment>
+			)
+		}
 	}
 }
 
